@@ -1,0 +1,35 @@
+<section>
+    <div class="container mt-4">
+        <h2 class="text-center">Create a new account</h2>
+
+
+        <form action="/signup" method="post">
+        {{#if emptyInput}}
+                  <p class="error" style="color: #ff0000;">Email and password cannot be empty</p>
+                  {{/if}}
+                  
+                   {{#if sign}}
+            <p class="text-danger">Email already Exist </p>
+            {{/if}}
+            <label for="">Name</label>
+            <input type="text" name="Name" class="form-control">
+
+            <label for="">Age</label>
+            <input type="number" name="Age" class="form-control">
+
+            <label for="">Place</label>
+            <input type="text" name="Place" class="form-control">
+
+
+            <label for="">Email</label>
+            <input type="email" name="Email" class="form-control">
+
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example27">Password</label>
+                    <input name="password" type="password" id="form2Example27" class="form-control form-control-lg" />
+                  </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Sign in</button>
+        </form>
+    </div>
+</section>

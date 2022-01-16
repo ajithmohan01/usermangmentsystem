@@ -1,0 +1,23 @@
+<section>
+    <div class="container mt-4">
+        <h2 class="text-center">Update user</h2>
+
+
+        <form action="/admin/update-users/{{id}}" method="post">
+            <label for="">Name</label>
+            <input value="{{data.Name}}" type="text" name="Name" class="form-control">
+
+            <label for="">Age</label>
+            <input value="{{data.Age}}" type="number" name="Age" class="form-control">
+
+            <label for="">Place</label>
+            <input value="{{data.Place}}" type="text" name="Place" class="form-control">
+
+
+            <label for="">Email</label>
+            <input value="{{data.Email}}" type="email" name="Email" class="form-control">
+
+            <button type="submit" class="btn btn-primary mt-3">Sign in</button>
+        </form>
+    </div>
+</section>

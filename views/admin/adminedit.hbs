@@ -1,0 +1,31 @@
+<section>
+    <div class="container mt-4">
+        <h2 class="text-center">Add user</h2>
+        <form action="/admin/add-user" method="post">
+            {{#if emptyInput}}
+            <p class="text-danger">Email and password cannot be empty </p>
+            {{/if}}
+             {{#if siggnerr}}
+            <p class="text-danger">Email already Exist </p>
+            {{/if}}
+
+            <label for="">Name</label>
+            <input type="text" name="Name" class="form-control">
+
+            <label for="">Age</label>
+            <input type="number" name="Age" class="form-control">
+
+            <label for="">Place</label>
+            <input type="text" name="Place" class="form-control">
+
+
+            <label for="">Email</label>
+            <input type="email" name="Email" class="form-control">
+
+            <label for="">Password</label>
+            <input type="password" name="password" class="form-control">
+
+            <button type="submit" class="btn btn-secondary mt-3">Upload</button>
+        </form>
+    </div>
+</section>

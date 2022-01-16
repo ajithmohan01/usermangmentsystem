@@ -1,0 +1,72 @@
+<section>
+  <div class="container">
+    <div class="row mt-3">
+      <div class="d-flex justify-content-between">
+
+
+      <input 
+        type="text"
+        class="mt-3 col-4"
+        id="myInput"
+        onkeyup="myFunction()"
+        placeholder="Search for names.."
+      />
+      <a href="/admin/adduser" class="btn btn-secondary">Add user</a>
+      </div>
+
+      <table id="myTable" class="table mt-3">
+        <thead>
+          <tr class="table-secondary">
+            {{! <th scope="col">No</th> }}
+            <th scope="col">Name</th>
+            <th scope="col">age</th>
+            <th scope="col">Place</th>
+            <th scope="col">Email</th>
+           <th scope="col">Update/Delete</th>
+           <th scope="col">Block/Unblock</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {{#each users}}
+            <tr  class="table-warning">
+              {{! <th scope="row">1</th> }}
+              <td>{{this.Name}}</td>
+              <td>{{this.Age}}</td>
+              <td>{{this.Place}}</td>
+              <td>{{this.Email}}</td>
+              <td>
+                <a
+                  href="/admin/update-users/{{this._id}}"
+                  class="btn btn-secondary"
+                >Update</a>
+
+                <a
+                  href="/admin/delete-user/{{this._id}}"
+                  class="btn btn-danger"
+                  onclick="return confirm('Are you sure to delete {{this.Name}}?')"
+                >Delete</a>
+
+              </td>
+
+                        <td >
+                           {{#if this.permission}}
+                            <a href="/admin/block-user/{{this._id}}" class="btn btn-success btn-sm ">block</a>
+                           {{else}}
+                            <a href="/admin/block-user/{{this._id}}" class="btn btn-warning btn-sm ">unblock</a>
+                           {{/if}}
+                         </td>
+
+
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+            <nav class="navbar navbar-light bg-light">
+  <a href="/admin/adminlogout"><button class="btn btn-danger">logout</button></a>
+</nav>
+
