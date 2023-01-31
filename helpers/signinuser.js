@@ -2,6 +2,7 @@ const collection = require('../config/collection')
 var db=require('../config/connection')
 const bcrypt=require('bcrypt')
 const { log } = require('npmlog')
+
 module.exports={
     doSignup:(userData)=>{
         return new Promise(async(resolve,reject)=>{
